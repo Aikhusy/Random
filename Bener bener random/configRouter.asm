@@ -12,3 +12,5 @@ exit
 exit
 copy running-config startup-config
 write
+
+ip route "gateway musuh" "subnet musuh" "router musuh"

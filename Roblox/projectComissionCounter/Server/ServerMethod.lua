@@ -58,4 +58,31 @@ function user.savePoint(player)
 	end
 end
 
+function user.showLeaderboard()
+	local success, errorMessages = pcall(function()
+		local sorted = DataStore:GetOrderedDataStore("Cashback")
+		local pageSize = 10 -- Ubah sesuai dengan jumlah per halaman yang Anda inginkan
+		local pageIndex = 1
+		local topTen
+
+		repeat
+			local getTopN = sorted:GetSortedAsync(false, pageSize, pageIndex)
+			topTen = getTopN:GetCurrentPage()
+
+			for rank, data in ipairs(topTen) do
+				local userId = tonumber(data.key)
+				local username = game.Players:GetNameFromUserIdAsync(userId)
+				local value = data.value
+				print(username)
+				print(value)
+			end
+
+			pageIndex = pageIndex + 1
+		until not getTopN:IsFinished()
+	end)
+
+	if not success then
+		print("Error:", errorMessages)
+	end
+end
 return user

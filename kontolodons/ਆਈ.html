@@ -5,10 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        body {
+          font-family: 'Arial', sans-serif;
+          margin: 0;
+          padding: 0;
+        }
+    
+        #sidebar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 250px;
+          height: 100%;
+          background-color: #333;
+          color: #fff;
+          padding-top: 20px;
+        }
+    
+        #sidebar ul {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+        }
+    
+        #sidebar ul li {
+          padding: 10px 20px;
+          border-bottom: 1px solid #555;
+        }
+    
+        #sidebar ul li a {
+          text-decoration: none;
+          color: #fff;
+        }
+    
+        #sidebar ul li:hover {
+          background-color: #555;
+        }
+    
+        #content {
+          margin-left: 250px;
+          padding: 20px;
+        }
+    
+        @media (max-width: 768px) {
+          #sidebar {
+            width: 100%;
+            height: auto;
+            position: relative;
+          }
+    
+          #content {
+            margin-left: 0;
+          }
+        }
+      </style>
+
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top">
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"> <!-- Tambahkan class navbar-dark dan bg-dark -->
         <a class="navbar-brand" href="#">TEMPLATES</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -30,49 +87,65 @@
             </ul>
         </div>
     </nav>
-    <div class="container"></div>
-    <div class="card-body my-4">
-        <div class=" mx-auto border px-md-3">
-            <div class="row h3 mx-md-3 border "><p>Layouting</p></div>
-            <div class="row my-5 mx-md-3 border "><p>Description</p></div>
-            <div class=" row row-cols-1 row-cols-2 g-4 border mx-md-3" style="outline-color: aliceblue;">
-                <div class="col my-4">
-                    <div class="card-body border">
-                        <div class="h5 card-title">1</div>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                </div>
-            
-                <div class="col my-4">
-                    <div class="card-body border">
-                        <div class="h5">2</div>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                </div>
-            
-            </div>
-            
+
+    <div id="sidebar">
+        <div class="mt-6">
+           <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Users</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul> 
         </div>
+        
     </div>
 
-    <div class="container">
+    <div id="content">
+        
+        <div class="container"></div>
         <div class="card-body my-4">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="border px-md-3">
-                        <div class="row h3 mx-md-3 border"><p>Layouting</p></div>
-                        <div class="row my-5 mx-md-3 border"><p>Description</p></div>
-                        <div class="row row-cols-1 row-cols-md-2 g-4 border mx-md-3" style="outline-color: aliceblue;">
-                            <div class="col my-4">
-                                <div class="card-body border">
-                                    <div class="h5 card-title">1</div>
-                                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <div class=" mx-auto border px-md-3">
+                <div class="row h3 mx-md-3 border "><p>Layouting</p></div>
+                <div class="row my-5 mx-md-3 border "><p>Description</p></div>
+                <div class=" row row-cols-1 row-cols-2 g-4 border mx-md-3" style="outline-color: aliceblue;">
+                    <div class="col my-4">
+                        <div class="card-body border">
+                            <div class="h5 card-title">1</div>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                
+                    <div class="col my-4">
+                        <div class="card-body border">
+                            <div class="h5">2</div>
+                            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                
+                </div>
+                
+            </div>
+        </div>
+    
+        <div class="container">
+            <div class="card-body my-4">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="border px-md-3">
+                            <div class="row h3 mx-md-3 border"><p>Layouting</p></div>
+                            <div class="row my-5 mx-md-3 border"><p>Description</p></div>
+                            <div class="row row-cols-1 row-cols-md-2 g-4 border mx-md-3" style="outline-color: aliceblue;">
+                                <div class="col my-4">
+                                    <div class="card-body border">
+                                        <div class="h5 card-title">1</div>
+                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col my-4">
-                                <div class="card-body border">
-                                    <div class="h5">2</div>
-                                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <div class="col my-4">
+                                    <div class="card-body border">
+                                        <div class="h5">2</div>
+                                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -81,7 +154,19 @@
             </div>
         </div>
     </div>
+
     
-    
+    <script>
+        function openNav() {
+          document.getElementById("mySidebar").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidebar").style.width = "0";
+          document.getElementById("main").style.marginLeft = "0";
+        }
+        </script>
+        
 </body>
 </html>
